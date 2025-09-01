@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+/* Custom keyframe animations for the landing page */
+@keyframes fade-in-up {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes pulse-slow {
+0%, 100% {
+opacity: 0.8;
+}
+50% {
+opacity: 0.6;
+}
+}
+
+@keyframes square {
+0% {
+transform: translateY(0) rotate(0deg);
+opacity: 0;
+border-radius: 0;
+}
+10% {
+opacity: 1;
+}
+80% {
+opacity: 0.5;
+}
+100% {
+transform: translateY(-1000px) rotate(720deg);
+opacity: 0;
+border-radius: 50%;
+}
+}
+
+/*
+The following classes are used in the Welcome.jsx component.
+Make sure to import this file in your main application entry point (e.g., index.js or App.js).
+*/
+.animate-fade-in-up {
+animation: fade-in-up 1s ease-out;
+}
+
+.animate-pulse-slow {
+animation: pulse-slow 8s infinite ease-in-out;
+}
+
+.animate-square {
+animation: square 25s infinite;
+}
