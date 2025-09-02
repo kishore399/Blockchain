@@ -14,10 +14,10 @@ const Works = () => {
           </p>
 
           <div className="relative flex flex-col items-center">
-            {/* The line connecting the steps */}
+
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-600 top-0"></div>
 
-            {/* Step 1 */}
+
             <div className="relative z-10 w-full md:w-2/3 lg:w-1/2 p-8 mb-12 md:mb-20 bg-[#1A1A2E] rounded-2xl shadow-xl transition-all duration-300 ease-in-out hover:bg-[#2A2A4E] transform hover:-translate-y-2">
               <div className="flex items-center gap-6">
                 <div className="flex items-center justify-center p-4 rounded-full bg-purple-600 shadow-lg text-white">
@@ -36,7 +36,7 @@ const Works = () => {
               </div>
             </div>
 
-            {/* Step 2 */}
+    
             <div className="relative z-10 w-full md:w-2/3 lg:w-1/2 p-8 mb-12 md:mb-20 bg-[#1A1A2E] rounded-2xl shadow-xl transition-all duration-300 ease-in-out hover:bg-[#2A2A4E] transform hover:-translate-y-2">
               <div className="flex items-center gap-6">
                 <div className="flex items-center justify-center p-4 rounded-full bg-blue-600 shadow-lg text-white">
@@ -54,7 +54,7 @@ const Works = () => {
               </div>
             </div>
 
-            {/* Step 3 */}
+    
             <div className="relative z-10 w-full md:w-2/3 lg:w-1/2 p-8 bg-[#1A1A2E] rounded-2xl shadow-xl transition-all duration-300 ease-in-out hover:bg-[#2A2A4E] transform hover:-translate-y-2">
               <div className="flex items-center gap-6">
                 <div className="flex items-center justify-center p-4 rounded-full bg-green-600 shadow-lg text-white">

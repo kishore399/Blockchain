@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Custom keyframe animations for the landing page */
 @keyframes fade-in-up {
 from {
 opacity: 0;
@@ -40,10 +39,6 @@ border-radius: 50%;
 }
 }
 
-/*
-The following classes are used in the Welcome.jsx component.
-Make sure to import this file in your main application entry point (e.g., index.js or App.js).
-*/
 .animate-fade-in-up {
 animation: fade-in-up 1s ease-out;
 }
