@@ -2,18 +2,24 @@ import Features from "../components/Features";
 import Footer from "../components/Footer";
 import Works from "../components/Works";
 import Header from "../components/Header";
+import { useNavigate } from "react-router";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/login")
+  }
+
   return (
     <div className="min-h-screen bg-[#0E0E1A] text-white font-sans overflow-x-hidden">
 
       <Header />
-      {/* Hero Section */}
       <header className="relative w-full h-screen flex flex-col items-center justify-center text-center p-8">
-        {/* Background gradient */}
+
         <div className="absolute inset-0 bg-gradient-to-br from-[#0E0E1A] via-[#1A1A2E] to-[#2E2E3A] opacity-80 animate-pulse-slow"></div>
         
-        {/* Animated background squares */}
+
         <ul className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           {[...Array(10)].map((_, i) => (
             <li
@@ -47,7 +53,7 @@ const Welcome = () => {
             Revolutionize library record-keeping with a secure, transparent, and decentralized system. Track books, manage loans, and ensure data integrity like never before.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button onClick={handleClick} className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Get Started
             </button>
             <button className="px-8 py-4 rounded-full border border-white hover:bg-white hover:text-black transition-colors transform hover:-translate-y-1">
