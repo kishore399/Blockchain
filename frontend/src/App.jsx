@@ -6,7 +6,6 @@ import Signup from "./pages/Signup";
 import { Navigate, Routes, Route } from "react-router";
 
 function App() {
-
   return (
     <div className="bg-[#1E1E2E] text-white">
       <Routes>
@@ -18,7 +17,7 @@ function App() {
       </Routes>
       <Toaster />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
