@@ -85,11 +85,60 @@ export const login = async (req, res) => {
   }
 };
 
-export const getData = (req, res) => {
+export const getData = async (req, res) => {
   try {
-    return res.status(200).send("Yeah its working");
+    const { userId } = req.body;
+    console.log(userId);
+    if (!userId) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const info = {
+      transactions: user.transactions,
+    };
+
+    return res.status(200).json({ info });
   } catch (err) {
     console.log("Error in getData controller", err);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+export const logTransaction = async (req, res) => {
+  try {
+    const { id, userId, book, type } = req.body;
+
+    if (!userId || !book || !type) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const newTransaction = {
+      txId: `0x${Math.random().toString(16).slice(2, 10)}...`,
+      book,
+      user: userId,
+      type,
+      date: new Date().toISOString(),
+    };
+
+    user.transactions.push(newTransaction);
+
+    console.log(newTransaction);
+
+    await user.save();
+
+    return res.status(200).json({ newTransaction });
+  } catch (err) {
+    console.error("Error in logTransaction controller:", err);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };

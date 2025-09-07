@@ -15,6 +15,14 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    stats: {
+      type: [Object],
+      default: [],
+    },
+    transactions: {
+      type: [Object],
+      default: [],
+    },
   },
   {
     timestamps: true,
