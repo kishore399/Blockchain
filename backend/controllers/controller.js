@@ -31,6 +31,13 @@ export const signup = async (req,res) => {
         });
 
         await newUser.save();
+        
+        const userInfo = {
+            _id: user._id,
+            email: user.email,
+            fullName: user.name,
+            createdAt: user.createdAt,
+        }
 
         return res.status(201).json({ userInfo, message : "account created seccessfully" })
 

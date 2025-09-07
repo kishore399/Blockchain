@@ -3,25 +3,30 @@ import Input from "../components/Input";
 import { User, Mail, Lock, Loader } from "lucide-react";
 import { Link, useNavigate } from "react-router";
 import Floatingbg from "../components/Floatingbg";
+import { useApiStore } from "../store/apistore";
 
 const Signup = () => {
 
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading] = useState("");
-  const [error] = useState("");
 
   const navigate = useNavigate();
 
+  const isLoading = useApiStore((s) => s.isLoading);
+  const error = useApiStore((s) => s.error);
+  const setError = useApiStore((s) => s.setError);
+  const signup = useApiStore((s) => s.signup);
+
   useEffect(() => {
-  })
+    setError(null);
+  },[])
 
   const handleLogin = async (e) => {
     e.preventDefault();
       try{
-        // await login(email, password);
-        navigate("/");
+        await signup(email, password, userName);
+        navigate("/home");
       } catch (err) {
         console.log(err);
       }
