@@ -15,22 +15,6 @@ const userSchema = new mongoose.Schema(
             type : String,
             required : true,
         },
-        profilePic : {
-            type : String,
-            default : "",
-        },
-        otp : {
-            type : Number,
-            default : undefined,
-        },
-        otpExpiresAt : {
-            type : Date,
-            default : undefined,
-        },
-        isVerified : {
-            type : Boolean,
-            default : false,
-        },
     },
     { 
         timestamps : true,
@@ -38,6 +22,6 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("Account", userSchema);
 
 export default User;

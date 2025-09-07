@@ -3,8 +3,7 @@
 const Works = () => {
   return (
     <>
-
-      <section className="w-full my-3 py-20 px-4 md:px-8 bg-[#0E0E1A]">
+      <section className="w-full py-10 px-4 md:px-8 bg-[#0E0E1A]">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             How It Works

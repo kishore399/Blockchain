@@ -2,6 +2,7 @@ import Features from "../components/Features";
 import Footer from "../components/Footer";
 import Works from "../components/Works";
 import Header from "../components/Header";
+import Floatingbg from "../components/Floatingbg";
 import { useNavigate } from "react-router";
 
 const Welcome = () => {
@@ -17,26 +18,7 @@ const Welcome = () => {
       <Header />
       <header className="relative w-full h-screen flex flex-col items-center justify-center text-center p-8">
 
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0E0E1A] via-[#1A1A2E] to-[#2E2E3A] opacity-80 animate-pulse-slow"></div>
-        
-
-        <ul className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          {[...Array(10)].map((_, i) => (
-            <li
-              key={i}
-              className="absolute block bg-gray-600/10 animate-square"
-              style={{
-                width: `${Math.random() * 120 + 60}px`,
-                height: `${Math.random() * 120 + 60}px`,
-                left: `${Math.random() * 100}%`,
-                bottom: `-${Math.random() * 200 + 150}px`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${Math.random() * 10 + 20}s`,
-                borderRadius: '10px',
-              }}
-            ></li>
-          ))}
-        </ul>
+        <Floatingbg />
 
         <div className="relative z-10 flex flex-col justify-center items-center max-w-4xl mx-auto px-4 py-20 animate-fade-in-up">
           <div className="mb-6 text-blue-400">
